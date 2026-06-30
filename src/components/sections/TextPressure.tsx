@@ -77,8 +77,15 @@ export default function TextPressure({
           const wght = Math.floor(attr(d, maxDist, minWeight, maxWeight));
           const wdth = Math.floor(attr(d, maxDist, minWidth, maxWidth));
           span.style.fontVariationSettings = `"wght" ${wght}, "wdth" ${wdth}`;
-          const t = Math.max(0, 1 - d / maxDist);
+          // tight proximity (only letters near the cursor react), sharpened
+          const prox = Math.max(0, 1 - d / 150);
+          const t = prox * prox;
           span.style.transform = `scale(${(1 + t * scaleBoost).toFixed(3)})`;
+          // glossy heat: only the near-cursor letters brighten + glow
+          span.style.filter =
+            t > 0.02
+              ? `brightness(${(1 + t * 1.1).toFixed(2)}) drop-shadow(0 0 ${(t * 18).toFixed(1)}px rgba(255, 180, 90, ${(t * 0.9).toFixed(2)}))`
+              : "";
         }
       }
       raf = requestAnimationFrame(animate);
@@ -112,7 +119,6 @@ export default function TextPressure({
                   }}
                   aria-hidden
                   className="tp-char"
-                  style={{ animationDelay: `${(-i * 0.08).toFixed(2)}s` }}
                 >
                   {ch}
                 </span>

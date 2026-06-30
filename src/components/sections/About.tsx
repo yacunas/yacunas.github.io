@@ -24,7 +24,13 @@ export default function About() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <Reveal delay={0.1}>
+        <p className="mt-12 text-xs font-medium uppercase tracking-wider text-slate-500">
+          Impact from the systems I&apos;ve shipped
+        </p>
+      </Reveal>
+
+      <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}

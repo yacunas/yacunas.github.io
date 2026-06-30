@@ -18,11 +18,12 @@ export const profile = {
   },
 };
 
+// Impact across the systems I've helped build (not personal vanity metrics).
 export const stats = [
-  { value: "4+", label: "Years Experience" },
-  { value: "35K+", label: "Weekly Users Served" },
-  { value: "₱30M+", label: "Weekly Turnover" },
-  { value: "5", label: "AI Providers Unified" },
+  { value: "4+", label: "Years building software" },
+  { value: "35K+", label: "Weekly users on systems I've built" },
+  { value: "₱30M+", label: "Weekly turnover processed" },
+  { value: "18+", label: "Microservices shipped" },
 ];
 
 export type Experience = {
