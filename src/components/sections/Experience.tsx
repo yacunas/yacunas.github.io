@@ -8,7 +8,7 @@ export default function Experience() {
   return (
     <section id="experience" className="section-cv mx-auto max-w-5xl scroll-mt-24 px-5 py-20 sm:px-6 sm:py-32">
       <Reveal>
-        <p className="font-mono text-sm text-cyan-400">02 — Experience</p>
+        <p className="font-mono text-sm text-amber-400">02 — Experience</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
           A trajectory through the stack
         </h2>
@@ -16,7 +16,7 @@ export default function Experience() {
 
       <div className="relative mt-14">
         {/* timeline spine */}
-        <div className="absolute left-3 top-2 hidden h-full w-px bg-gradient-to-b from-sky-400/60 via-blue-500/25 to-transparent sm:block" />
+        <div className="absolute left-3 top-2 hidden h-full w-px bg-gradient-to-b from-amber-400/60 via-amber-500/25 to-transparent sm:block" />
 
         <div className="space-y-10">
           {experiences.map((exp, i) => (
@@ -27,23 +27,23 @@ export default function Experience() {
                   <span className="relative flex h-4 w-4 items-center justify-center">
                     {exp.current && (
                       <motion.span
-                        className="absolute inline-flex h-full w-full rounded-full bg-cyan-400/60"
+                        className="absolute inline-flex h-full w-full rounded-full bg-amber-400/60"
                         animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
                         transition={{ repeat: Infinity, duration: 1.8 }}
                       />
                     )}
-                    <span className="relative h-3 w-3 rounded-full bg-cyan-400 ring-4 ring-cyan-400/15" />
+                    <span className="relative h-3 w-3 rounded-full bg-amber-400 ring-4 ring-amber-400/15" />
                   </span>
                 </span>
 
                 <motion.article
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                  className="group rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-colors hover:border-sky-400/30 hover:bg-white/[0.06] sm:p-6"
+                  className="group rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-colors hover:border-amber-400/30 hover:bg-white/[0.06] sm:p-6"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <h3 className="text-lg font-semibold text-slate-50">
-                      {exp.role} <span className="text-cyan-300">· {exp.company}</span>
+                      {exp.role} <span className="text-amber-300">· {exp.company}</span>
                     </h3>
                     <span className="font-mono text-xs text-slate-400">{exp.period}</span>
                   </div>
@@ -53,7 +53,7 @@ export default function Experience() {
                   <ul className="mt-4 space-y-2">
                     {exp.highlights.map((h) => (
                       <li key={h} className="flex gap-2.5 text-sm text-slate-400">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400/70" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400/70" />
                         <span>{h}</span>
                       </li>
                     ))}

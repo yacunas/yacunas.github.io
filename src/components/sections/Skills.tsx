@@ -36,7 +36,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section-cv mx-auto max-w-5xl scroll-mt-24 px-5 py-20 sm:px-6 sm:py-32">
       <Reveal>
-        <p className="font-mono text-sm text-cyan-400">03 — Skills</p>
+        <p className="font-mono text-sm text-amber-400">03 — Skills</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
           The toolkit
         </h2>
@@ -49,7 +49,7 @@ export default function Skills() {
             <Reveal key={group.category} delay={gi * 0.04}>
               <div className="h-full rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
                 <div className="mb-4 flex items-center gap-2.5">
-                  <Cat size={18} className="text-cyan-400" />
+                  <Cat size={18} className="text-amber-400" />
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
                     {group.category}
                   </h3>
@@ -62,9 +62,9 @@ export default function Skills() {
                         key={item}
                         whileHover={{ y: -3, scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 18 }}
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs text-slate-200 transition-colors hover:border-cyan-400/40 hover:text-cyan-200"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs text-slate-200 transition-colors hover:border-amber-400/40 hover:text-amber-200"
                       >
-                        {Icon ? <Icon size={14} /> : <span className="h-1.5 w-1.5 rounded-full bg-cyan-400/70" />}
+                        {Icon ? <Icon size={14} /> : <span className="h-1.5 w-1.5 rounded-full bg-amber-400/70" />}
                         {item}
                       </motion.span>
                     );

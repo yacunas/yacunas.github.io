@@ -25,12 +25,12 @@ export default function Nav() {
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#top" className="font-mono text-sm font-semibold tracking-tight text-slate-100">
-          <span className="text-cyan-400">{"<"}</span>RJY<span className="text-cyan-400">{" />"}</span>
+          <span className="text-amber-400">{"<"}</span>RJY<span className="text-amber-400">{" />"}</span>
         </a>
         <ul className="hidden items-center gap-7 text-sm text-slate-300 sm:flex">
           {navLinks.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="transition-colors hover:text-cyan-300">
+              <a href={l.href} className="transition-colors hover:text-amber-300">
                 {l.label}
               </a>
             </li>
@@ -40,7 +40,7 @@ export default function Nav() {
           href={profile.resumes.fullstack}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-200 transition hover:bg-cyan-400/20"
+          className="rounded-full border border-amber-400/40 bg-amber-400/10 px-4 py-1.5 text-sm font-medium text-amber-200 transition hover:bg-amber-400/20"
         >
           Resume
         </a>
