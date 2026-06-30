@@ -6,7 +6,7 @@ import { experiences } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-5xl scroll-mt-24 px-6 py-24 sm:py-32">
+    <section id="experience" className="section-cv mx-auto max-w-5xl scroll-mt-24 px-5 py-20 sm:px-6 sm:py-32">
       <Reveal>
         <p className="font-mono text-sm text-cyan-400">02 — Experience</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
@@ -16,7 +16,7 @@ export default function Experience() {
 
       <div className="relative mt-14">
         {/* timeline spine */}
-        <div className="absolute left-3 top-2 hidden h-full w-px bg-gradient-to-b from-cyan-400/60 via-indigo-500/30 to-transparent sm:block" />
+        <div className="absolute left-3 top-2 hidden h-full w-px bg-gradient-to-b from-sky-400/60 via-blue-500/25 to-transparent sm:block" />
 
         <div className="space-y-10">
           {experiences.map((exp, i) => (
@@ -39,7 +39,7 @@ export default function Experience() {
                 <motion.article
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                  className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-colors hover:border-cyan-400/30 hover:bg-white/[0.05]"
+                  className="group rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-colors hover:border-sky-400/30 hover:bg-white/[0.06] sm:p-6"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <h3 className="text-lg font-semibold text-slate-50">

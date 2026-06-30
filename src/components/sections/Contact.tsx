@@ -7,7 +7,7 @@ import { profile } from "@/lib/data";
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-24 text-center sm:py-32">
+    <section id="contact" className="section-cv mx-auto max-w-3xl scroll-mt-24 px-5 py-20 text-center sm:px-6 sm:py-32">
       <Reveal>
         <p className="font-mono text-sm text-cyan-400">04 — Contact</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">
@@ -22,7 +22,7 @@ export default function Contact() {
       <Reveal delay={0.1}>
         <a
           href={`mailto:${profile.email}`}
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 px-7 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:brightness-110"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-7 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/25 transition hover:brightness-110"
         >
           <Mail size={18} /> {profile.email}
         </a>

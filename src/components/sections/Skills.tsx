@@ -34,7 +34,7 @@ const categoryIcons: Record<string, IconType> = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-5xl scroll-mt-24 px-6 py-24 sm:py-32">
+    <section id="skills" className="section-cv mx-auto max-w-5xl scroll-mt-24 px-5 py-20 sm:px-6 sm:py-32">
       <Reveal>
         <p className="font-mono text-sm text-cyan-400">03 — Skills</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
@@ -47,7 +47,7 @@ export default function Skills() {
           const Cat = categoryIcons[group.category] ?? Sparkles;
           return (
             <Reveal key={group.category} delay={gi * 0.04}>
-              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
                 <div className="mb-4 flex items-center gap-2.5">
                   <Cat size={18} className="text-cyan-400" />
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">

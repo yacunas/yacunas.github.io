@@ -7,7 +7,7 @@ import { profile, stats, education } from "@/lib/data";
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-5xl scroll-mt-24 px-6 py-24 sm:py-32">
+    <section id="about" className="section-cv mx-auto max-w-5xl scroll-mt-24 px-5 py-20 sm:px-6 sm:py-32">
       <Reveal>
         <p className="font-mono text-sm text-cyan-400">01 — About</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
@@ -32,9 +32,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.5 }}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center backdrop-blur-sm"
+            className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center"
           >
-            <div className="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl">
+            <div className="bg-gradient-to-r from-sky-300 to-cyan-200 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl">
               {s.value}
             </div>
             <div className="mt-1 text-xs text-slate-400 sm:text-sm">{s.label}</div>
