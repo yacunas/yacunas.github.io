@@ -1,7 +1,6 @@
 "use client";
 
-import type { ComponentType } from "react";
-import { motion } from "motion/react";
+import type { ReactNode } from "react";
 import {
   SiTypescript, SiJavascript, SiPython, SiNodedotjs, SiNestjs, SiExpress,
   SiFastapi, SiGraphql, SiReact, SiNextdotjs, SiTailwindcss, SiShadcnui,
@@ -10,27 +9,30 @@ import {
   SiJest, SiVitest, SiK6, SiGithubactions,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import { Code2, Server, MonitorSmartphone, Database, Cloud, Sparkles, Workflow, FlaskConical } from "lucide-react";
+import LogoLoop, { type LogoItem } from "@/components/react-bits/LogoLoop";
 import Reveal from "@/components/ui/Reveal";
-import { skillGroups } from "@/lib/data";
 
-type IconType = ComponentType<{ className?: string; size?: number }>;
+const ico = (Icon: React.ComponentType<{ className?: string }>, title: string): LogoItem => ({
+  node: (
+    <Icon className="h-7 w-7 text-slate-400 transition-colors duration-300 hover:text-amber-300 sm:h-9 sm:w-9" />
+  ) as ReactNode,
+  title,
+});
 
-const skillIcons: Record<string, IconType> = {
-  TypeScript: SiTypescript, JavaScript: SiJavascript, Python: SiPython,
-  "Node.js": SiNodedotjs, NestJS: SiNestjs, Express: SiExpress, FastAPI: SiFastapi,
-  GraphQL: SiGraphql, "React.js": SiReact, "Next.js": SiNextdotjs,
-  "Tailwind CSS": SiTailwindcss, "shadcn/ui": SiShadcnui, PostgreSQL: SiPostgresql,
-  MySQL: SiMysql, MongoDB: SiMongodb, ScyllaDB: SiScylladb, Redis: SiRedis,
-  Kafka: SiApachekafka, RabbitMQ: SiRabbitmq, Docker: SiDocker, Kubernetes: SiKubernetes,
-  AWS: FaAws, "GitHub Actions": SiGithubactions, Anthropic: SiAnthropic,
-  "Google Gemini": SiGooglegemini, Jest: SiJest, Vitest: SiVitest, K6: SiK6,
-};
+const rowA: LogoItem[] = [
+  ico(SiTypescript, "TypeScript"), ico(SiJavascript, "JavaScript"), ico(SiPython, "Python"),
+  ico(SiNodedotjs, "Node.js"), ico(SiNestjs, "NestJS"), ico(SiExpress, "Express"),
+  ico(SiFastapi, "FastAPI"), ico(SiGraphql, "GraphQL"), ico(SiReact, "React"),
+  ico(SiNextdotjs, "Next.js"), ico(SiTailwindcss, "Tailwind CSS"), ico(SiShadcnui, "shadcn/ui"),
+];
 
-const categoryIcons: Record<string, IconType> = {
-  Languages: Code2, Backend: Server, Frontend: MonitorSmartphone, Databases: Database,
-  Infrastructure: Cloud, "AI & LLM": Sparkles, Practices: Workflow, Testing: FlaskConical,
-};
+const rowB: LogoItem[] = [
+  ico(SiPostgresql, "PostgreSQL"), ico(SiMysql, "MySQL"), ico(SiMongodb, "MongoDB"),
+  ico(SiScylladb, "ScyllaDB"), ico(SiRedis, "Redis"), ico(SiApachekafka, "Kafka"),
+  ico(SiRabbitmq, "RabbitMQ"), ico(SiDocker, "Docker"), ico(SiKubernetes, "Kubernetes"),
+  ico(FaAws, "AWS"), ico(SiGithubactions, "GitHub Actions"), ico(SiJest, "Jest"),
+  ico(SiVitest, "Vitest"), ico(SiK6, "K6"), ico(SiAnthropic, "Anthropic"), ico(SiGooglegemini, "Gemini"),
+];
 
 export default function Skills() {
   return (
@@ -40,41 +42,39 @@ export default function Skills() {
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
           The toolkit
         </h2>
+        <p className="mt-4 max-w-xl text-pretty text-slate-400">
+          Languages, frameworks, data stores, and infra I reach for to ship reliable products.
+        </p>
       </Reveal>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2">
-        {skillGroups.map((group, gi) => {
-          const Cat = categoryIcons[group.category] ?? Sparkles;
-          return (
-            <Reveal key={group.category} delay={gi * 0.04}>
-              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
-                <div className="mb-4 flex items-center gap-2.5">
-                  <Cat size={18} className="text-amber-400" />
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
-                    {group.category}
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => {
-                    const Icon = skillIcons[item];
-                    return (
-                      <motion.span
-                        key={item}
-                        whileHover={{ y: -3, scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 18 }}
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs text-slate-200 transition-colors hover:border-amber-400/40 hover:text-amber-200"
-                      >
-                        {Icon ? <Icon size={14} /> : <span className="h-1.5 w-1.5 rounded-full bg-amber-400/70" />}
-                        {item}
-                      </motion.span>
-                    );
-                  })}
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
-      </div>
+      <Reveal delay={0.1}>
+        <div className="mt-12 space-y-8">
+          <LogoLoop
+            logos={rowA}
+            speed={48}
+            direction="left"
+            gap={56}
+            logoHeight={36}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#030308"
+            ariaLabel="Languages and frameworks"
+          />
+          <LogoLoop
+            logos={rowB}
+            speed={48}
+            direction="right"
+            gap={56}
+            logoHeight={36}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#030308"
+            ariaLabel="Data stores, infrastructure, and testing"
+          />
+        </div>
+      </Reveal>
     </section>
   );
 }
