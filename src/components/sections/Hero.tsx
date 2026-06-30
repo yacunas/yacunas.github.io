@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown, FileText, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import TextPressure from "@/components/sections/TextPressure";
 import { profile } from "@/lib/data";
 
 export default function Hero() {
@@ -33,10 +32,9 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <TextPressure
-            text={profile.name}
-            className="select-none text-[clamp(2.1rem,8.5vw,6.3rem)] leading-[1.02] tracking-[-0.01em] drop-shadow-[0_0_30px_rgba(249,115,22,0.32)]"
-          />
+          <h1 className="name-static select-none text-[clamp(2.1rem,8.5vw,6.3rem)] font-extrabold leading-[1.02] tracking-[-0.01em] drop-shadow-[0_0_30px_rgba(249,115,22,0.32)]">
+            {profile.name}
+          </h1>
         </motion.div>
 
         <motion.p
