@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown, FileText, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import PressureText from "@/components/sections/PressureText";
+import TextPressure from "@/components/sections/TextPressure";
 import { profile } from "@/lib/data";
 
 export default function Hero() {
@@ -19,7 +19,7 @@ export default function Hero() {
           initial={reduce ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-amber-300/80 sm:mb-5 sm:text-sm sm:tracking-[0.35em]"
+          className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-amber-300 sm:mb-5 sm:text-sm sm:tracking-[0.4em]"
         >
           {profile.title}
         </motion.p>
@@ -33,9 +33,9 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <PressureText
+          <TextPressure
             text={profile.name}
-            className="select-none text-balance text-[clamp(2.4rem,9vw,7rem)] font-extrabold leading-[1.05] tracking-tight drop-shadow-[0_0_28px_rgba(249,115,22,0.3)]"
+            className="select-none text-[clamp(2.1rem,8.5vw,6.3rem)] leading-[1.02] tracking-[-0.01em] drop-shadow-[0_0_30px_rgba(249,115,22,0.32)]"
           />
         </motion.div>
 
@@ -43,7 +43,7 @@ export default function Hero() {
           initial={reduce ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-5 max-w-md text-pretty text-sm text-slate-300 sm:mt-6 sm:max-w-xl sm:text-lg"
+          className="mt-5 max-w-md text-pretty text-base font-medium text-slate-200 sm:mt-6 sm:max-w-xl sm:text-lg"
         >
           {profile.tagline}
         </motion.p>
