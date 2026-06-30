@@ -1,11 +1,23 @@
-import Hero from "@/components/Hero";
-import ParticlesBackground from "@/components/ParticlesBackground";
+import SpaceBackground from "@/components/space/SpaceBackground";
+import Nav from "@/components/Nav";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Experience from "@/components/sections/Experience";
+import Skills from "@/components/sections/Skills";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="aurora relative flex flex-1 flex-col overflow-hidden text-slate-100">
-      <ParticlesBackground />
-      <Hero />
-    </main>
+    <>
+      <SpaceBackground />
+      <Nav />
+      <main className="relative flex flex-1 flex-col">
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
+    </>
   );
 }

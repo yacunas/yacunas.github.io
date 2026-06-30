@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05060f;
+  --foreground: #e2e8f0;
 }
 
 @theme inline {
@@ -12,45 +12,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Playful animated aurora backdrop */
-.aurora {
-  background:
-    radial-gradient(40rem 40rem at 20% 20%, rgba(167, 139, 250, 0.18), transparent 60%),
-    radial-gradient(35rem 35rem at 80% 30%, rgba(244, 114, 182, 0.16), transparent 60%),
-    radial-gradient(45rem 45rem at 50% 90%, rgba(56, 189, 248, 0.16), transparent 60%),
-    #07070b;
-  background-size: 200% 200%;
-  animation: aurora-pan 18s ease-in-out infinite;
+/* thin cosmic scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05060f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#22d3ee, #6366f1);
+  border-radius: 999px;
+  border: 3px solid #05060f;
 }
 
-@keyframes aurora-pan {
-  0%,
-  100% {
-    background-position: 0% 0%, 100% 0%, 50% 100%;
-  }
-  50% {
-    background-position: 20% 30%, 70% 20%, 40% 80%;
-  }
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .aurora {
-    animation: none;
-  }
-  * {
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
   }
 }

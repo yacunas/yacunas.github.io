@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ronnel James Yacunas",
-  description: "Personal portfolio of Ronnel James Yacunas",
+  title: "Ronnel James Yacunas — Full-Stack Engineer",
+  description:
+    "Portfolio of Ronnel James Yacunas, a full-stack engineer building reliable, large-scale systems and AI-powered products across fintech, creator commerce, and B2B SaaS.",
 };
 
 export default function RootLayout({
